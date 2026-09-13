@@ -5,6 +5,7 @@
 ## 2. Checking intermediate cleaning steps is not performed here but highly
 ##    recommended
 
+# Load packages 
 library(stringr)
 library(dplyr)
 library(lubridate)
@@ -12,7 +13,7 @@ library(ggplot2)
 library(readr)
 
 ## CLEANING 1.1: Clean 2012 data
-polls_2012_raw <- read_csv("state_polls_2012.csv")
+polls_2012_raw <- read_csv("state_polls_2012.csv") # import 2012 raw polling dataset 
 
 polls_2012_clean <- polls_2012_raw |> 
   separate_wider_delim(col = "poll_info", delim = "-president-", names = c("year_state", "major_party_candidates")) |>
